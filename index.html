@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARCHIVE // ACCÈS RESTREINT</title>
+
+<title>MESSAGE // CHATERTTON</title>
 
 <style>
     * {
@@ -12,208 +14,226 @@
 
     body {
         margin: 0;
-        background: #050505;
-        color: #b8b8b8;
-        font-family: "Courier New", monospace;
         min-height: 100vh;
+        background: #030303;
+        color: #b7b7b7;
+        font-family: "Courier New", monospace;
         display: flex;
-        align-items: center;
         justify-content: center;
-        overflow: hidden;
+        align-items: center;
     }
 
-    body::before {
+    body::after {
         content: "";
         position: fixed;
         inset: 0;
         pointer-events: none;
         background: repeating-linear-gradient(
             0deg,
-            rgba(255,255,255,0.02) 0px,
-            rgba(255,255,255,0.02) 1px,
+            rgba(255,255,255,0.025) 0px,
+            rgba(255,255,255,0.025) 1px,
             transparent 1px,
             transparent 4px
         );
     }
 
-    .container {
+    .box {
         width: 90%;
-        max-width: 700px;
-        border: 1px solid #3b0000;
+        max-width: 720px;
+        border: 1px solid #333;
         padding: 40px;
-        box-shadow: 0 0 40px rgba(100,0,0,0.15);
+        box-shadow: 0 0 50px rgba(0,0,0,0.8);
     }
 
-    .warning {
-        color: #8b0000;
-        font-size: 13px;
+    .top {
+        color: #666;
+        font-size: 11px;
         letter-spacing: 3px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
     h1 {
-        color: #d6d6d6;
-        font-size: 30px;
-        letter-spacing: 6px;
-        margin: 0 0 10px 0;
-        text-shadow: 0 0 8px rgba(255,0,0,0.2);
+        color: #ddd;
+        font-size: 25px;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
     }
 
-    .line {
-        height: 1px;
-        background: #3b0000;
-        margin: 25px 0;
+    .mail {
+        border-left: 2px solid #5b0000;
+        padding-left: 20px;
+        line-height: 1.9;
     }
 
-    .message {
-        line-height: 1.8;
-        font-size: 14px;
+    .name {
+        color: #9b0000;
+    }
+
+    .button {
+        margin-top: 35px;
+        background: #090909;
+        color: #aaa;
+        border: 1px solid #444;
+        padding: 13px 22px;
+        font-family: inherit;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background: #170000;
+        color: white;
+        border-color: #700000;
+    }
+
+    #response {
+        margin-top: 35px;
+        line-height: 2;
+        white-space: pre-line;
+    }
+
+    .red {
+        color: #8f0000;
     }
 
     .hidden {
         display: none;
     }
 
-    .code-box {
-        margin-top: 30px;
-    }
-
-    input {
-        background: #080808;
-        border: 1px solid #444;
-        color: #ddd;
-        padding: 12px;
-        width: 65%;
-        font-family: inherit;
-        outline: none;
-    }
-
-    input:focus {
-        border-color: #8b0000;
-    }
-
-    button {
-        background: #120000;
-        border: 1px solid #5c0000;
-        color: #aaa;
-        padding: 12px 18px;
-        font-family: inherit;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background: #250000;
-        color: white;
-    }
-
-    #result {
-        margin-top: 25px;
-        min-height: 25px;
-        color: #8b0000;
-    }
-
-    .classified {
-        color: #777;
-        font-size: 11px;
+    .warning {
+        color: #8f0000;
         letter-spacing: 2px;
-        margin-top: 35px;
-    }
-
-    .glitch {
-        animation: glitch 3s infinite;
-    }
-
-    @keyframes glitch {
-        0%, 95%, 100% { opacity: 1; }
-        96% { opacity: 0.4; transform: translateX(2px); }
-        97% { opacity: 0.8; transform: translateX(-2px); }
-        98% { opacity: 0.3; }
     }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="box">
 
-    <div class="warning">
-        // AVERTISSEMENT — ACCÈS NON AUTORISÉ
+    <div class="top">
+        MESSAGE // DESTINATAIRE : CHATERTTON
     </div>
 
-    <h1 class="glitch">DOSSIER 017</h1>
+    <h1>RÉPONSE</h1>
 
-    <div class="line"></div>
-
-    <div class="message">
-        <p>Si vous avez trouvé cette page, c'est que vous avez déjà vu quelque chose que vous n'auriez pas dû voir.</p>
-
-        <p>Le dossier a été supprimé.</p>
-        <p>Les photographies ont disparu.</p>
-        <p>Le nom a été effacé.</p>
-
-        <p>Mais quelqu'un a laissé un code.</p>
-    </div>
-
-    <div class="code-box">
-        <p>ENTREZ LE CODE :</p>
-
-        <input type="text" id="code" placeholder="________">
-        <button onclick="checkCode()">VALIDER</button>
-
-        <div id="result"></div>
-    </div>
-
-    <div id="secret" class="hidden">
-        <div class="line"></div>
-
-        <p>ACCÈS ACCORDÉ.</p>
+    <div class="mail">
 
         <p>
-            Vous pensiez réellement que personne ne vous regardait ?
+            Coucou Chatertton.
         </p>
 
         <p>
-            INDICE 01 : <strong>23:17</strong>
+            Tu voulais savoir si je recevais tes mails.
         </p>
 
         <p>
-            Cherchez ce qui s'est passé à cette heure.
+            <strong>Oui.</strong>
         </p>
+
+        <p>
+            Je les reçois tous.
+        </p>
+
+        <p>
+            Même ceux que tu as supprimés.
+        </p>
+
+        <p>
+            Même ceux que tu pensais ne jamais avoir envoyés.
+        </p>
+
+        <p>
+            Alors arrête de m'appeler « ma chère Morjane ».
+        </p>
+
+        <p>
+            Tu ne me connais pas aussi bien que tu le crois.
+        </p>
+
     </div>
 
-    <div class="classified">
-        ARCHIVE INTERNE — NE PAS DISTRIBUER
-    </div>
+    <button class="button" onclick="reveal()">
+        TU VEUX SAVOIR QUI JE SUIS ?
+    </button>
+
+    <div id="response" class="hidden"></div>
 
 </div>
 
+
 <script>
-function checkCode() {
 
-    const code = document.getElementById("code").value.trim();
-    const result = document.getElementById("result");
-    const secret = document.getElementById("secret");
+function reveal() {
 
-    if (code === "2317") {
+    const response = document.getElementById("response");
 
-        result.style.color = "#777";
-        result.textContent = "Vérification...";
+    response.classList.remove("hidden");
 
-        setTimeout(() => {
-            result.textContent = "IDENTITÉ RECONNUE.";
-            secret.classList.remove("hidden");
-        }, 1200);
+    response.innerHTML =
+`
+<span class="warning">MESSAGE ENVOYÉ...</span>
 
-    } else {
+<br><br>
 
-        result.textContent = "CODE INCORRECT.";
+Tu voulais jouer à ça ?
 
-        setTimeout(() => {
-            result.textContent = "Essayez encore.";
-        }, 1500);
-    }
+<br><br>
+
+Très bien.
+
+<br>
+
+Tu veux savoir qui je suis ?
+
+<br><br>
+
+<span class="red">Commence par me dire pourquoi tu as peur.</span>
+
+<br><br>
+
+Parce que moi...
+
+<br><br>
+
+je sais déjà qui tu es.
+
+<br><br>
+
+Je sais où tu étais.
+
+<br>
+
+Je sais ce que tu cherchais.
+
+<br>
+
+Et surtout...
+
+<br><br>
+
+<span class="red">je sais pourquoi tu m'écris.</span>
+
+<br><br>
+
+Alors maintenant, Chatertton...
+
+<br><br>
+
+<span class="red">c'est à ton tour d'avoir peur.</span>
+
+<br><br>
+
+Tu voulais mon identité.
+
+<br>
+
+Mais tu viens de me donner la tienne.
+`;
+
 }
+
 </script>
 
 </body>
 </html>
+```
