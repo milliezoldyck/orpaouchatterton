@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCHIVE // ACCÈS RESTREINT</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: #050505;
+        color: #b8b8b8;
+        font-family: "Courier New", monospace;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.02) 0px,
+            rgba(255,255,255,0.02) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    }
+
+    .container {
+        width: 90%;
+        max-width: 700px;
+        border: 1px solid #3b0000;
+        padding: 40px;
+        box-shadow: 0 0 40px rgba(100,0,0,0.15);
+    }
+
+    .warning {
+        color: #8b0000;
+        font-size: 13px;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        color: #d6d6d6;
+        font-size: 30px;
+        letter-spacing: 6px;
+        margin: 0 0 10px 0;
+        text-shadow: 0 0 8px rgba(255,0,0,0.2);
+    }
+
+    .line {
+        height: 1px;
+        background: #3b0000;
+        margin: 25px 0;
+    }
+
+    .message {
+        line-height: 1.8;
+        font-size: 14px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .code-box {
+        margin-top: 30px;
+    }
+
+    input {
+        background: #080808;
+        border: 1px solid #444;
+        color: #ddd;
+        padding: 12px;
+        width: 65%;
+        font-family: inherit;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #8b0000;
+    }
+
+    button {
+        background: #120000;
+        border: 1px solid #5c0000;
+        color: #aaa;
+        padding: 12px 18px;
+        font-family: inherit;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #250000;
+        color: white;
+    }
+
+    #result {
+        margin-top: 25px;
+        min-height: 25px;
+        color: #8b0000;
+    }
+
+    .classified {
+        color: #777;
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-top: 35px;
+    }
+
+    .glitch {
+        animation: glitch 3s infinite;
+    }
+
+    @keyframes glitch {
+        0%, 95%, 100% { opacity: 1; }
+        96% { opacity: 0.4; transform: translateX(2px); }
+        97% { opacity: 0.8; transform: translateX(-2px); }
+        98% { opacity: 0.3; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="warning">
+        // AVERTISSEMENT — ACCÈS NON AUTORISÉ
+    </div>
+
+    <h1 class="glitch">DOSSIER 017</h1>
+
+    <div class="line"></div>
+
+    <div class="message">
+        <p>Si vous avez trouvé cette page, c'est que vous avez déjà vu quelque chose que vous n'auriez pas dû voir.</p>
+
+        <p>Le dossier a été supprimé.</p>
+        <p>Les photographies ont disparu.</p>
+        <p>Le nom a été effacé.</p>
+
+        <p>Mais quelqu'un a laissé un code.</p>
+    </div>
+
+    <div class="code-box">
+        <p>ENTREZ LE CODE :</p>
+
+        <input type="text" id="code" placeholder="________">
+        <button onclick="checkCode()">VALIDER</button>
+
+        <div id="result"></div>
+    </div>
+
+    <div id="secret" class="hidden">
+        <div class="line"></div>
+
+        <p>ACCÈS ACCORDÉ.</p>
+
+        <p>
+            Vous pensiez réellement que personne ne vous regardait ?
+        </p>
+
+        <p>
+            INDICE 01 : <strong>23:17</strong>
+        </p>
+
+        <p>
+            Cherchez ce qui s'est passé à cette heure.
+        </p>
+    </div>
+
+    <div class="classified">
+        ARCHIVE INTERNE — NE PAS DISTRIBUER
+    </div>
+
+</div>
+
+<script>
+function checkCode() {
+
+    const code = document.getElementById("code").value.trim();
+    const result = document.getElementById("result");
+    const secret = document.getElementById("secret");
+
+    if (code === "2317") {
+
+        result.style.color = "#777";
+        result.textContent = "Vérification...";
+
+        setTimeout(() => {
+            result.textContent = "IDENTITÉ RECONNUE.";
+            secret.classList.remove("hidden");
+        }, 1200);
+
+    } else {
+
+        result.textContent = "CODE INCORRECT.";
+
+        setTimeout(() => {
+            result.textContent = "Essayez encore.";
+        }, 1500);
+    }
+}
+</script>
+
+</body>
+</html>
